@@ -15,7 +15,7 @@
 const fs = require("fs");
 const axios = require("axios");
 const inquirer = require("inquirer");
-        inquirer
+      inquirer
         .prompt([{
             message: "Enter your name: ",
             name: "userName" 
@@ -41,10 +41,16 @@ const inquirer = require("inquirer");
             //console.log( userName, userLoc, userBio, userGit, userLinked);
             let array = [ `<!DOCTYPE html>
             <html lang="en">
-            <h1>Hi! This portfolio represents: ` + userName + `</h1>`, 
-            `<header>` + `<h2>Located in: ` + userLoc + `</h2>` + `</header>`, 
-            `<body>` + `<h3>A short Biography: ` + userBio + `</h3>`, 
-            `<a href="`+userGit+`">Link to my GitHub!</a>`, 
+            <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <title>`+userName+`'s Portfolio</title>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+            </head>
+            <div class="jumbotron"><h1>Hi! This portfolio represents: ` + userName + `</h1></div>`, 
+            `<header>` + `<div>Located in: ` + userLoc + `</div>` + `</header>`, 
+            `<body>` + `<div>A short Biography: ` + userBio + `</div>`, 
+            `<a href="`+userGit+`">Link to my GitHub!</a></br>`, 
             `<a href="`+userLinked+`">Link to my LinkedIn!</a>`,
             `</body></html>`];
             const content = array.join("\n");
@@ -52,7 +58,7 @@ const inquirer = require("inquirer");
                 if (err){ 
                     throw err;
                 }
-                console.log("done");
+                console.log("HTML index file generated!");
             })
         });
         
