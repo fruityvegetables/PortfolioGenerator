@@ -16,4 +16,4 @@ Generates a simple HTML portfolio page based on user input.
   * Promises: For handling asynchronous behavior
 
 ## Link
-https://fruityvegetables.github.io/PortfolioGenerator/
+This index.js should be ran in node! Then an index.html file is made which can be opened in the browser.
